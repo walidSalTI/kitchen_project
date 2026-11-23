@@ -1,0 +1,633 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#163f35"><title>مقصف | نقطة البيع والتصنيع</title><style>
+
+:root{--ink:#1e3029;--muted:#617069;--pine:#19483b;--green:#276b4e;--line:#e0e5df;--paper:#f6f7f3;--yellow:#f5d477}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 Tahoma,Arial,sans-serif}button,input,select{font:inherit}button,a{ -webkit-tap-highlight-color:transparent}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #c99128;outline-offset:3px}.wrap{width:min(1260px,92%);margin:auto}header,nav{background:#fff}.head,.brand,.headend,.navin,.row,.cap,.tag,.actions,.primary,.secondary,.kpicap,.item,.dhead,.navbtn,.recipehead{display:flex;align-items:center}.head{height:76px;justify-content:space-between}.brand{color:var(--ink);font-weight:800;font-size:34px;gap:12px;text-decoration:none}.brandmark,.avatar,.ic,.opicon{display:grid;place-items:center;border-radius:12px}.brandmark{background:var(--pine);color:var(--yellow);width:46px;height:46px}.brandmark svg{width:32px;height:32px}.brandline{height:25px;width:1px;background:var(--line);margin:0 3px}.brand small,.headend{font-size:14px;color:var(--muted);font-weight:500}.headend{gap:14px}.avatar{width:36px;height:36px;background:#f0f3ed;color:var(--pine);border:1px solid var(--line)}svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}nav{border-block:1px solid var(--line)}.navin{gap:27px;overflow:auto}.navbtn{gap:8px;white-space:nowrap;padding:14px 4px;border:0;border-bottom:3px solid transparent;background:none;color:var(--muted);text-decoration:none;font-weight:600;font-size:15px}.navbtn.active{color:var(--pine);border-bottom-color:var(--pine)}main{padding:26px 0 48px}.hero{isolation:isolate;position:relative;background:var(--pine);border-radius:22px;color:white;padding:28px 34px;overflow:hidden;display:flex;align-items:center;justify-content:space-between;min-height:220px}.hero:before{content:"";position:absolute;inset:0 45% 0 0;background-image:linear-gradient(#92b39d12 1px,transparent 1px),linear-gradient(90deg,#92b39d12 1px,transparent 1px);background-size:25px 25px;z-index:-1}.eyebrow{font-size:14px;color:#d6e4d8;display:flex;align-items:center;gap:8px}.eyebrow i{width:20px;height:2px;background:var(--yellow)}h1,h2,h3,p{margin:0}h1{font-size:clamp(30px,3vw,43px);line-height:1.45;letter-spacing:-1px}.hero p{color:#deebe1;margin:1px 0 17px}.actions{gap:10px;flex-wrap:wrap}.primary,.secondary,.softbtn{border:0;border-radius:9px;font-weight:700;font-size:15px;justify-content:center;gap:8px;padding:9px 16px}.primary{background:var(--pine);color:#fff}.hero .primary{background:var(--yellow);color:#2e3824}.secondary,.softbtn{background:white;color:var(--pine);border:1px solid var(--line)}button:hover{filter:brightness(.96)}.hero .secondary{background:#ffffff0c;color:white;border:1px solid #729285}.art{position:relative;width:280px;height:165px;display:grid;place-items:center;margin-inline-end:4%;direction:rtl;user-select:none}.ticket{background:#fbefc9;color:#4d4f36;width:181px;height:145px;border-radius:5px;padding:12px 16px;transform:rotate(-9deg);box-shadow:0 8px 15px #09271e32;position:relative}.ticket:after{content:"";position:absolute;height:7px;bottom:-4px;inset-inline:0;background:linear-gradient(135deg,#fbefc9 25%,transparent 25%) -4px 0,linear-gradient(225deg,#fbefc9 25%,transparent 25%) -4px 0;background-size:8px 12px}.back{background:#b6cbad;position:absolute;transform:translate(27px,-2px) rotate(9deg)}.back:after{display:none}.ticket .cap{font-size:13px;justify-content:space-between;border-bottom:1px dashed #999b78;padding-bottom:5px}.ticket strong{font-size:18px}.ticketrow{font-size:13px;display:flex;justify-content:space-between}.barcode{height:12px;width:62px;background:repeating-linear-gradient(90deg,#656949 0 2px,transparent 2px 4px,#656949 4px 5px,transparent 5px 8px);margin-top:7px}.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:18px 0 24px}.kpi,.panel,.recipe{border:1px solid var(--line);border-radius:16px;background:#fff}.kpi{padding:17px 20px}.kpicap{gap:10px;font-weight:600;color:#516158}.ic,.opicon{height:36px;width:36px;border-radius:10px}.sage{background:#e5f1e8;color:#316749}.gold{background:#fbf0ce;color:#8e6622}.blue{background:#e6eff4;color:#457080}.lilac{background:#efeafa;color:#74618d}.pink{background:#f8e6dd;color:#a35d3e}.qty{font-size:32px;font-weight:750;margin-inline-start:1px;line-height:1.35;font-family:Arial,sans-serif}.unit{font-size:14px;color:var(--muted);margin-inline-start:7px}.row{margin-top:6px;align-items:baseline}.grid{display:grid;grid-template-columns:1.65fr 1fr;gap:18px;align-items:start}.panel{min-width:0;overflow:hidden}.panelhead,.pagehead{display:flex;align-items:center;justify-content:space-between;gap:12px}.panelhead{padding:19px 20px 15px}.panelhead h2,.recipe h2{font-size:20px}.link{border:0;background:none;color:var(--green);font-size:14px;font-weight:700}.tablewrap{overflow-x:auto}table{border-collapse:collapse;width:100%;text-align:start;white-space:nowrap}th,td{text-align:start;padding:11px 18px;border-top:1px solid #eef0eb;font-size:15px}th{background:#f8f9f6;font-size:14px;color:var(--muted);font-weight:500}.item{gap:10px;font-weight:600}.tag{display:inline-flex;border-radius:6px;padding:1px 9px;font-size:13px;white-space:nowrap}.note,time{color:var(--muted);font-size:14px}.log{display:flex;align-items:center;gap:11px;padding:14px 0;border-top:1px solid #edf0ea}.loglist{padding:0 20px}.logmain{flex:1}.logmain strong{display:block;font-size:15px}.logmain small{color:var(--muted);font-size:14px}.pagehead{margin:4px 0 21px}.pagehead h1{font-size:34px}.filters{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:15px 20px}.chip{background:#f3f5f0;color:#53645b;border:1px solid transparent;padding:5px 12px;border-radius:7px;font-size:14px}.chip.on{color:var(--pine);border-color:#b7cfbd;background:#e8f1e9}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.recipe{padding:20px}.recipehead{gap:11px}.recipehead h2{flex:1}.recipe p{margin:12px 0}.ingredient,.summaryline{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:8px 0}.recipe .primary{margin-top:14px}dialog{border:1px solid var(--line);border-radius:18px;width:min(450px,93vw);padding:24px;color:var(--ink);box-shadow:0 24px 80px #142c2633}dialog::backdrop{background:#14271cc0}.dhead{justify-content:space-between;margin-bottom:15px}.dhead h2{font-size:23px}.iconbtn{font-size:25px;width:35px;height:35px;border:0;border-radius:7px;background:#f2f4ef;line-height:1}label{display:block;font-weight:600;margin:13px 0 4px}select,input{width:100%;background:white;color:var(--ink);border:1px solid #b9c5ba;border-radius:8px;padding:8px 12px}select{appearance:none;background:white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23516558' viewBox='0 0 24 24'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat left 12px center;padding-left:35px}.summary{background:#f4f7f1;border-radius:9px;padding:10px 14px;margin-top:15px}.summaryline:first-child{border:0}.submit{width:100%;margin-top:12px}#error{color:#a13d2d;font-size:14px}#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--pine);color:white;border-radius:10px;padding:9px 22px;display:none;z-index:5}#toast.show{display:block}.empty{padding:20px;color:var(--muted)}
+@media(max-width:860px){.grid{grid-template-columns:1fr}.art{margin:0;width:210px}.navin{gap:18px}}@media(max-width:620px){.wrap{width:94%}.head{height:62px}.headend #date,.brandline,.brand small{display:none}.brand{font-size:28px}.brandmark{width:38px;height:38px}.navin{gap:12px}.navbtn{font-size:14px;gap:5px;padding:10px 2px}.navbtn svg{width:17px}.hero{padding:22px;min-height:200px}.art{display:none}.hero:before{inset:0 35% 0 0}.kpis{gap:6px;margin:10px 0 16px}.kpi{padding:10px}.kpicap{display:block;font-size:13px}.kpicap .ic{margin-bottom:5px;width:30px;height:30px}.qty{font-size:25px}.unit{font-size:12px}.cards{grid-template-columns:1fr}.panelhead,th,td{padding-inline:12px}.pagehead{align-items:flex-start;flex-wrap:wrap}.pagehead h1{font-size:27px}main{padding-top:15px}.pagehead .actions{gap:5px}.pagehead button{padding:7px 9px}}
+.doclink,.lotlink{border:0;border-radius:5px;padding:3px 7px;color:var(--pine);background:#edf4ed;font-size:13px;font-weight:600}.doclink{display:inline-flex;align-items:center;gap:5px}.doclink svg{width:14px;height:14px}.lotlink{white-space:nowrap}.link{text-decoration:none}.logmain .doclink{margin-inline-start:5px}.pricepair{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}.pricepair input{grid-row:2}.serial{font:600 13px/1.5 ui-monospace,monospace;letter-spacing:.04em;white-space:nowrap}.summary .serial{margin-inline-start:4px;color:var(--muted)}#document{width:min(810px,96vw);padding:0;max-height:90dvh}.paperbar,.paperbar span,.invoicehead,.paperactions,.billtotal,.paperbrand{display:flex;align-items:center}.paperbar,.invoicehead,.billtotal{justify-content:space-between}.paperbar{padding:12px 22px;border-bottom:1px solid var(--line);background:#f5f8f4;color:var(--pine)}.paperbar span,.paperbrand{gap:8px;font-weight:bold}.invoice,.lotbody{padding:24px}.invoicehead{padding-bottom:20px;border-bottom:2px solid var(--pine);margin-bottom:16px;gap:12px}.paperbrand{color:var(--green);font-size:16px}.invoice h2{font-size:30px}.docmeta{text-align:end}.docmeta small,.invoice td small{display:block;color:var(--muted);font-size:13px}.invoice th,.invoice td,.lotbody th,.lotbody td{padding:10px 8px}.billtotal{padding:13px 16px;background:#edf3ea;color:var(--pine);margin-top:18px;border-radius:9px;font-weight:bold}.billtotal strong{font-size:23px}.paperactions{justify-content:flex-end;gap:10px;padding:0 24px 20px}.lotbody>p{margin-bottom:16px}.lotbody h3{margin:22px 0 8px}.lotbody .loglist{padding:0}
+@media(max-width:620px){.invoice,.lotbody{padding:15px}.grid .panel td,.grid .panel th{padding-inline:7px}.item{gap:5px}.item .ic{width:26px;height:26px}.loglist{padding-inline:12px}.pricepair{display:block}}
+@media print{body{background:white}body>*:not(#document){display:none!important}#document[open]{display:block;position:static;max-height:none;height:auto;width:100%;max-width:none;overflow:visible;border:0;box-shadow:none}#document::backdrop,.paperbar,.paperactions{display:none}#document .tablewrap{overflow:visible}.invoice{padding:0}.invoice table{white-space:normal}.billtotal{border:1px solid #aaa}}
+.reportcontrols{display:flex;align-items:flex-end;flex-wrap:wrap;gap:14px;padding:15px 20px}.reportcontrols>div{flex:1 1 155px}.reportcontrols label{margin:0 0 3px;font-size:14px}.reportnote,.sampleNote{margin:12px 0}.sampleNote{background:#e9f1e7;border-inline-start:3px solid var(--pine);padding:10px 14px}.losswarn{margin:12px 0;background:#fff0e4;color:#833918;border:1px solid #e9c1a7;border-radius:8px;padding:9px 11px}.lossflag{font-size:13px;background:#ffe9df;color:#963618;border-radius:5px;padding:2px 6px}.confirmLoss{display:flex;align-items:center;gap:8px;font-size:14px}.confirmLoss input{width:auto}.statement{padding:0 20px 16px;max-width:950px}.statement .summaryline:last-child{background:#edf4eb;padding:9px;border-radius:6px;font-weight:700}.invoice h3{margin:15px 0 6px}.navin{gap:clamp(10px,2vw,27px)}.paperactions{flex-wrap:wrap}.panel td .secondary,.panel td .primary{display:inline-flex;margin:2px}.filters .chip{white-space:nowrap}.reportcontrols select{min-width:150px}#fallback a,.losswarn a{color:var(--pine)}@media(max-width:620px){.reportcontrols{gap:8px}.reportcontrols>div{flex-basis:40%}.navin{gap:12px}.navbtn{flex:none}}
+.policy-field{position:relative}.policy-label{display:flex;align-items:center;gap:7px;margin:13px 0 4px}.policy-label label{margin:0}.help-trigger{display:grid;place-items:center;padding:0;width:24px;height:24px;border-radius:50%;background:#edf4ed;border:1px solid #bacbbd;color:var(--pine);font-size:15px;font-weight:bold}.policy-tip:not([hidden]){display:block;position:absolute;z-index:2;top:100%;inset-inline:0;padding:11px 14px;border-radius:9px;color:white;background:#234a3d;box-shadow:0 5px 16px #13291e30;font-size:14px;line-height:1.65}.rounding-hint{font-size:14px;color:var(--muted);margin:4px 0 9px}.policy-example>strong{display:block;margin-bottom:4px}.policy-example .summaryline{gap:8px}.policy-example .summaryline:last-child{color:var(--pine)}.policy-example bdi{white-space:nowrap}
+.composition{min-width:0;margin:16px 0 4px;padding:8px 12px;border:1px solid var(--line);border-radius:10px}.composition legend{font-size:15px;font-weight:650;padding:0 5px}.component-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:7px 0}.component-row+.component-row{border-top:1px solid var(--line)}.component-row label{display:flex;align-items:center;gap:6px;margin:0;font-size:14px;overflow-wrap:anywhere}.component-row input[type=checkbox]{width:18px;height:18px;flex:none;accent-color:var(--pine)}.component-quantity{min-width:100px}.component-quantity input{width:72px}.component-quantity input:disabled{background:#f1f3ef;color:var(--muted)}
+
+
+</style></head><body><header><div class="wrap head"><a aria-label="مقصف، الرئيسية" class="brand" href="#home"><span class="brandmark" data-icon="store"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 9l2-5h14l2 5 M4 10v10h16V10 M3 9q2 4 5 0 2 4 4 0 2 4 4 0 3 4 5 0 M9 20v-6h6v6"></path></svg></span>مقصف<span class="brandline"></span><small id="roleLabel">المخزون والمحاسبة</small></a><div class="headend"><span id="date">الاثنين، 23 نوفمبر</span><span class="avatar" data-icon="store"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 9l2-5h14l2 5 M4 10v10h16V10 M3 9q2 4 5 0 2 4 4 0 2 4 4 0 3 4 5 0 M9 20v-6h6v6"></path></svg></span></div></div></header>
+<nav><div class="wrap navin" id="nav"><a class="navbtn" href="https://maqsaf-kitchen-workbench.tartfrost18.chatgpt.site/?utm_source=chatgpt.com#home"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z"></path></svg>نظرة عامة</a><a aria-current="page" class="navbtn active" href="https://maqsaf-kitchen-workbench.tartfrost18.chatgpt.site/?utm_source=chatgpt.com#stock"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m3 7 9-4 9 4-9 5z M3 7v10l9 5 9-5V7 M12 12v10 M7 5l10 5"></path></svg>المخزون</a><a class="navbtn" href="https://maqsaf-kitchen-workbench.tartfrost18.chatgpt.site/?utm_source=chatgpt.com#history"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 4h16v16H4z M8 8h1 M12 8h5 M8 12h1 M12 12h5 M8 16h1 M12 16h5"></path></svg>سجل الحركات</a><a class="navbtn" href="https://maqsaf-kitchen-workbench.tartfrost18.chatgpt.site/?utm_source=chatgpt.com#pricing"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 4h8l10 10-7 7L3 10z M7 7h.1"></path></svg>التسعير</a><a class="navbtn" href="https://maqsaf-kitchen-workbench.tartfrost18.chatgpt.site/?utm_source=chatgpt.com#reports"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 20h18 M6 16v-5 M12 16V4 M18 16V8"></path></svg>التقارير</a></div></nav>
+<main class="wrap" id="main"><div class="pagehead"><h1>المخزون</h1><div class="actions"><button class="primary" data-id="" data-op="addItem"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m4 16 12-12 4 4L8 20H4z M14 6l4 4"></path></svg>إضافة صنف</button></div></div><section class="panel"><div class="filters"><button class="chip on" data-filter="all">الكل</button><button class="chip" data-filter="raw">مواد أولية</button><button class="chip" data-filter="ready">أصناف جاهزة</button><button class="chip" data-filter="manufactured">مواد مصنّعة</button></div><p class="empty">المخزون فارغ. أضف أول صنف لتسجيل دفعاته.</p></section></main>
+<dialog id="modal"><form id="form"><div class="dhead"><h2 id="dt"></h2><button aria-label="إغلاق" class="iconbtn" id="close" type="button">×</button></div><div id="fields"></div><p id="error" role="alert"></p><button class="primary submit" id="submit" type="submit"></button></form></dialog>
+<div id="toast" role="status"></div>
+<dialog aria-labelledby="paperTitle" id="document"><div id="paper"></div></dialog><script>
+
+
+// Quantities use the base stock unit. Prices are per unit, in the same currency.
+const Ledger = (() => {
+  const round = v => Math.round((v + Number.EPSILON) * 100) / 100;
+  const code = (prefix, n) => prefix + '-' + String(n).padStart(4, '0');
+  function price(v) {
+    if (v === null) return null;
+    if (!Number.isFinite(v) || v < 0 || v > 1e10) throw Error('تحقّق من السعر المدخل.');
+    return v;
+  }
+  const qround = v => Math.round((v + Number.EPSILON) * 1e6) / 1e6;
+  function validQuantity(v) { return Number.isFinite(v) && v > 0 && v <= 1e9 && Math.abs(qround(v)-v) < 1e-8; }
+  function plan(state, item, quantity, selected = '') {
+    if (!validQuantity(quantity)) throw Error('أدخل كمية موجبة صالحة (حتى 6 منازل عشرية).');
+    const lots = state.lots.filter(l => l.item === item && l.left > 1e-7 && (!selected || l.code === selected));
+    let remaining = quantity;
+    const lines = [];
+    for (const lot of lots) {
+      const q = qround(Math.min(remaining, lot.left));
+      lines.push({ item, lot: lot.code, q, cost: lot.cost, sell: lot.sell, dir: -1 });
+      remaining = qround(remaining - q);
+      if (remaining <= 1e-7) break;
+    }
+    if (remaining > 1e-7) throw Error('الكمية المتاحة من ' + items[item][0] + (selected ? ' في الدفعة المحددة' : '') + ' هي ' + fmt(quantity - remaining) + ' ' + items[item][1] + '.');
+    return lines;
+  }
+  function total(lines, field) {
+    if (lines.some(l => l[field] === null)) return null;
+    return round(lines.reduce((s, l) => s + l[field] * l.q, 0));
+  }
+  function manufacturedCost(state, item, visiting = new Set()) {
+    const product = state.catalog?.[item];
+    if (!product) return null;
+    if (product.type !== 'manufactured') {
+      if (state.pending?.[item]) return null;
+      // Remember the last priced raw-material cost after manufacturing consumes its entire stock.
+      const average = state.stock?.[item] > 1e-7 ? state.avg?.[item] : state.lastAvg?.[item];
+      if (average == null) return null;
+      return typeof average === 'number' && Number.isFinite(average) && average >= 0 ? average : null;
+    }
+    if (visiting.has(item)) return null;
+    const components = product.components;
+    if (!components || typeof components !== 'object' || !Object.keys(components).length) return null;
+    const seen = new Set(visiting);
+    seen.add(item);
+    let cost = 0;
+    for (const [component, amount] of Object.entries(components)) {
+      if (!Number.isFinite(amount) || amount <= 0) return null;
+      const componentCost = manufacturedCost(state, component, seen);
+      if (componentCost === null) return null;
+      cost += amount * componentCost;
+    }
+    // Retain precision for fractional recipe quantities.
+    return Math.round((cost + Number.EPSILON) * 10000) / 10000;
+  }
+
+  function record(state, op, item, q, options = {}) {
+    if (!Number.isSafeInteger(q) || q < 1) throw Error('أدخل كمية صحيحة أكبر من صفر.');
+    const doc = code('INV', state.events.length + 1);
+    const at = options.at ?? Date.now();
+    let lines = [];
+    if (op === 'prep') {
+      const inputs = options.inputs ?? Object.fromEntries(Object.entries(state.recipes[item]).map(([k, v]) => [k, q * v]));
+      for (const [k, amount] of Object.entries(inputs)) lines.push(...plan(state, k, amount));
+    } else if (op !== 'receive') {
+      lines = plan(state, item, q, options.selected);
+      if (op === 'sale' && !options.legacy) for (const l of lines) {
+        if (l.sell === null) {
+          if (options.fallback == null) throw Error('أدخل سعر بيع للدفعة التي لم يُسجّل سعرها سابقاً.');
+          l.sell = price(options.fallback);
+        }
+      }
+    }
+    if (op === 'receive' || op === 'prep') {
+      const inputCost = total(lines, 'cost');
+      const cost = op === 'prep' ? (inputCost === null ? null : inputCost / q) : price(options.cost ?? null);
+      lines.push({item, lot: code('LOT', state.lots.length + 1), q, cost, sell: price(options.sell ?? null), dir: 1});
+    }
+    const delta = {};
+    for (const l of lines) delta[l.item] = (delta[l.item] || 0) + l.dir * l.q;
+    for (const [k, d] of Object.entries(delta)) {
+      if (!Number.isSafeInteger(state.stock[k] + d)) throw Error('الكمية أكبر من الحد المتاح.');
+    }
+    for (const l of lines) {
+      if (l.dir > 0) state.lots.push({code:l.lot, item:l.item, received:l.q, left:l.q, cost:l.cost, sell:l.sell, doc, at});
+      else state.lots.find(b => b.code === l.lot).left -= l.q;
+    }
+    for (const [k,d] of Object.entries(delta)) state.stock[k] += d;
+    const event = {doc, op, id:item, q, at, lines, delta};
+    state.events.push(event);
+    return event;
+  }
+  function upgrade(old, demo = false) {
+    const fresh = {version:2, recipes:old.recipes, stock:Object.fromEntries(Object.keys(items).map(i => [i,0])), lots:[], events:[]};
+    const example = {bread:[50,100], cheese:[2,3], thyme:[1,2], juice:[60,85], cheeseMeal:[null,220]};
+    for (const e of old.events) {
+      const inputs = Object.fromEntries(Object.entries(e.delta).filter(([,v]) => v < 0).map(([k,v]) => [k,-v]));
+      const [cost,sell] = demo ? (example[e.id] || [null,null]) : [null,null];
+      record(fresh, e.op, e.id, e.q, {inputs, cost, sell, at:e.at, legacy:true});
+    }
+    if (demo) record(fresh,'receive','bread',20,{cost:75,sell:125});
+    return fresh;
+  }
+  return {plan, record, upgrade, total, round, qround, validQuantity, manufacturedCost};
+})();
+
+
+
+</script>
+<script>
+
+
+'use strict';
+const Books = (() => {
+  const accounts = {cash:'الصندوق', ar:'العملاء', inventory:'المخزون', ap:'الموردون', capital:'رأس المال والأرصدة الافتتاحية', sales:'إيراد المبيعات', cogs:'تكلفة البضاعة المباعة', electricity:'الكهرباء', gas:'الغاز', admin:'مصاريف إدارية', other:'مصاريف تشغيل أخرى', waste:'تكلفة التالف'};
+  const categories=['electricity','gas','admin','other'];
+  const zeros=()=>Object.fromEntries(Object.keys(items).map(k=>[k,0]));
+  const cents=v=>Math.round((v+Number.EPSILON)*100);
+  function check(ok,msg){if(!ok)throw Error(msg)}
+  function money(v){check(Number.isFinite(v)&&v>=0&&v<=1e10&&Math.abs(v*100-Math.round(v*100))<0.0001,'أدخل مبلغاً صالحاً بمنزلتين عشريتين كحد أقصى.');return v}
+  function empty(recipes){
+    return {version:3,stock:zeros(),value:zeros(),avg:zeros(),prices:Object.fromEntries(Object.keys(items).map(k=>[k,null])),lots:[],events:[],pending:{},recipes,
+      policy:{kind:'markup',rate:25,step:0.01,loss:'warn'}};
+  }
+  function setPolicy(s,p){
+    check(['markup','margin'].includes(p.kind)&&Number.isFinite(p.rate)&&p.rate>=0&&p.rate<=10000&&(p.kind!=='margin'||p.rate<100),'الهامش يجب أن يكون أقل من ١٠٠٪ ونسبة الإضافة غير سالبة.');
+    check(money(p.step)>0&&['warn','block'].includes(p.loss),'تحقّق من التقريب وسياسة الخسارة.');
+    s.policy={...p};
+  }
+  function beforeRounding(avg,p){
+    return p.kind==='margin'?avg/(1-p.rate/100):avg*(1+p.rate/100);
+  }
+  function suggest(avg,p){
+    if(avg==null)return null;
+    const raw=beforeRounding(avg,p);
+    return cents(Math.ceil(raw/p.step-1e-10)*p.step)/100;
+  }
+  function averageCost(s,item) {
+    if (s.catalog?.[item]?.type === 'manufactured') return Ledger.manufacturedCost(s,item);
+    return s.pending?.[item] ? null : (s.avg?.[item] ?? null);
+  }
+  function productionQuote(s,item,quantity){
+    check(s.catalog?.[item]?.type==='manufactured','اختر مادة مصنّعة مسجّلة في المخزون.');
+    check(Number.isSafeInteger(quantity)&&quantity>0&&quantity<=1000000,'أدخل عدد وحدات تصنيع صحيحاً أكبر من صفر.');
+    const parts=Object.entries(s.catalog[item].components||{});
+    check(parts.length>0,'هذه المادة ليس لها تركيبة. حدّد مكوّناتها من إدارة المخزون.');
+    const lines=[];let estimated=0, missingCost=false, enough=true;
+    for(const [id,units] of parts){
+      check(s.catalog?.[id]?.type==='raw','التركيبة تحتوي مكوّناً غير صالح؛ المسموح مواد أولية فقط.');
+      const needed=Ledger.qround(Number(units)*quantity);
+      check(Ledger.validQuantity(Number(units))&&Ledger.validQuantity(needed),'كمية المكوّن غير صالحة أو تتجاوز دقة المخزون.');
+      const available=s.stock[id]||0;
+      const cost=averageCost(s,id);
+      if(s.pending?.[id] || cost===null)missingCost=true;
+      if(available+1e-7<needed)enough=false;
+      estimated+=cost===null?0:needed*cost;
+      lines.push({id,name:s.catalog[id].name,unit:s.catalog[id].unit,needed,available,cost,shortage:Math.max(0,Ledger.qround(needed-available))});
+    }
+    return {lines,estimated:missingCost?null:Math.round((estimated+Number.EPSILON)*100)/100,enough,missingCost};
+  }
+  function loss(s,item,price,approved){
+    const avg = averageCost(s,item);
+    if(avg!==null&&price<avg-1e-10){
+      check(s.policy.loss!=='block','سياسة التسعير تمنع سعراً أقل من متوسط التكلفة.');
+      check(approved,'أكّد التحذير قبل اعتماد السعر الخاسر.');
+    }
+  }
+  function setPrice(s,item,value,approved=false){
+    money(value);loss(s,item,value,approved);s.prices[item]=value;
+  }
+  function post(s,op,item,q,o={}){
+    const e={doc:'INV-'+String(s.events.length+1).padStart(4,'0'),op,id:item,q,at:o.at??Date.now(),status:'posted',lines:[],delta:{},values:{},journal:[],payment:o.payment??'cash',amount:0};
+    const cash=e.payment==='cash';
+    check(cash||e.payment==='credit','طريقة الدفع غير صالحة.');
+    function entry(dr,cr,amount){check(Number.isSafeInteger(amount)&&amount>=0,'المبلغ يتجاوز النطاق المتاح.');e.journal.push({dr,cr,amount})}
+    function priced(k){check(!Object.hasOwn(s.pending,k),'سجّل التقييم الافتتاحي لهذا الصنف من صفحة التسعير أولاً.')}
+    function addLine(k,dir,lot,count,cost,sell,value){
+      e.lines.push({item:k,dir,lot,q:count,cost,sell,quantity:count,unit_cost:cost,unit_price:sell,value});
+      e.delta[k]=(e.delta[k]||0)+dir*count;e.values[k]=(e.values[k]||0)+dir*value;
+    }
+    function issue(k,n,selected){
+      priced(k);const alloc=Ledger.plan(s,k,n,selected);
+      const cost=s.avg[k], total=Math.max(0,Math.min(s.value[k], s.value[k]-(Math.abs(n-s.stock[k])<1e-7?0:cents(Ledger.qround(s.stock[k]-n)*cost))));
+      let remaining=total;
+      alloc.forEach((l,i)=>{
+        const part=i===alloc.length-1?remaining:Math.min(remaining,cents(l.q*cost));remaining-=part;
+        addLine(k,-1,l.lot,l.q,cost,s.prices[k],part);
+      });
+      return total;
+    }
+    function intake(k,n,cost,value){
+      priced(k);addLine(k,1,'LOT-'+String(s.lots.length+1).padStart(4,'0'),n,cost,s.prices[k],value);
+    }
+    if(['receive','sale','waste','prep'].includes(op)){
+      check(Object.hasOwn(s.stock,item)&&Number.isSafeInteger(q)&&q>0,'أدخل كمية صحيحة موجبة.');
+    }
+    if(op==='receive'){
+      check(s.catalog?.[item]?.type!=='manufactured','المواد المصنّعة لا تُستلم كمشتريات؛ استخدم التصنيع من نقطة البيع.');
+      const cost=money(o.cost);e.amount=cents(q*cost);intake(item,q,cost,e.amount);entry('inventory',cash?'cash':'ap',e.amount);
+    }else if(op==='prep'){
+      const quote=productionQuote(s,item,q);
+      check(!quote.missingCost,'تكلفة أحد المكونات غير مسجّلة؛ راجع مسؤول المخزون.');
+      check(quote.enough,'المواد الأولية غير كافية: '+quote.lines.filter(l=>l.shortage>0).map(l=>l.name+' (ناقص '+l.shortage+' '+l.unit+')').join('، '));
+      let consumed=0;
+      // Consume FIFO lots, but book consumption using each item's moving average.
+      for(const line of quote.lines) consumed+=issue(line.id,line.needed);
+      e.amount=consumed;
+      e.recipe=Object.fromEntries(quote.lines.map(l=>[l.id,l.needed]));
+      e.productionUnitCost=consumed/100/q;
+      intake(item,q,e.productionUnitCost,consumed);
+      // Internal stock conversion: ingredient inventory -> finished inventory.
+      // All items share one inventory GL account, so no cash or P&L journal entry.
+    }else if(op==='sale'){
+      const price=s.prices[item];check(price!=null,'حدّد سعر مبيع للصنف من صفحة التسعير.');
+      loss(s,item,price,o.approved);e.cogs=issue(item,q,o.selected);e.amount=cents(price*q);
+      entry(cash?'cash':'ar','sales',e.amount);entry('cogs','inventory',e.cogs);
+    }else if(op==='waste'){
+      e.amount=issue(item,q,o.selected);entry('waste','inventory',e.amount);
+    }else if(op==='expense'||op==='capital'){
+      check(money(o.amount)>0,'أدخل مبلغاً أكبر من صفر.');e.amount=cents(o.amount);
+      if(op==='expense'){check(categories.includes(item),'اختر نوع المصروف.');entry(item,cash?'cash':'ap',e.amount)}
+      else entry('cash','capital',e.amount);
+    }else if(op==='opening'){
+      check(Object.hasOwn(s.pending,item),'التقييم الافتتاحي مسجّل مسبقاً.');
+      const cost=o.cost;check(Number.isFinite(cost)&&cost>=0,'أدخل تكلفة افتتاحية صالحة.');
+      e.amount=cents(s.stock[item]*cost);e.openingQty=s.stock[item];e.openingCost=cost;e.values[item]=e.amount;
+      entry('inventory','capital',e.amount);
+    }else if(op==='reverse'){
+      const src=s.events.find(d=>d.doc===o.source);
+      check(src?.status==='posted'&&src.op!=='reverse'&&!s.events.some(d=>d.source===src.doc),'لا يمكن عكس هذا المستند.');
+      // Unwind dependent stock movements before reversing their receipt or production.
+      if(['receive','prep','opening'].includes(src.op)){
+        const touched=Object.keys(src.values);
+        const later=s.events.slice(s.events.indexOf(src)+1);
+        const reversed=new Set(later.map(d=>d.source).filter(Boolean));
+        check(!later.some(d=>d.op!=='reverse'&&!reversed.has(d.doc)&&Object.keys(d.values||{}).some(k=>touched.includes(k))),'اعكس الحركات اللاحقة على الصنف أولاً للحفاظ على تقييم المخزون.');
+      }
+      if(src.op==='opening'){e.openingUndo=true;e.openingQty=src.openingQty;e.values[src.id]=-src.amount}
+      e.source=src.doc;e.id=src.id;e.q=src.q;e.amount=src.amount;e.payment=src.payment;
+      for(const j of src.journal)entry(j.cr,j.dr,j.amount);
+      for(const l of src.lines)addLine(l.item,-l.dir,l.lot,l.q,l.cost,l.sell,l.value);
+    }else throw Error('نوع حركة غير معروف.');
+    for(const [k,d] of Object.entries(e.values)){
+      const quantity=s.stock[k]+(e.delta[k]||0), value=s.value[k]+d;
+      check(Number.isFinite(quantity)&&quantity>=-1e-7&&Number.isSafeInteger(value)&&value>=0&&(quantity>1e-7||value===0),'الرصيد أو القيمة لا يسمحان بترحيل الحركة.');
+    }
+    for(const l of e.lines){
+      const lot=s.lots.find(b=>b.code===l.lot);
+      check(!lot||lot.left+l.dir*l.q>=-1e-7,'رصيد الدفعة لا يكفي لعكس الحركة.');
+    }
+    for(const l of e.lines){
+      const lot=s.lots.find(b=>b.code===l.lot);
+      if(lot)lot.left=Ledger.qround(lot.left+l.dir*l.q);
+      else s.lots.push({code:l.lot,item:l.item,received:l.q,left:l.q,cost:l.cost,sell:l.sell,doc:e.doc,at:e.at});
+    }
+    e.avcoAfter={};
+    for(const [k,d] of Object.entries(e.values)){
+      const qty=e.delta[k]||0;
+      s.lastAvg??={};
+      if(s.stock[k]>1e-7&&!s.pending?.[k])s.lastAvg[k]=s.avg[k];
+      s.stock[k]=Ledger.qround(s.stock[k]+qty);s.value[k]+=d;
+      if(s.stock[k]===0)s.avg[k]=0;
+      else if(qty>0||op==='opening'||op==='reverse')s.avg[k]=s.value[k]/100/s.stock[k];
+      if(s.stock[k]>0&&!s.pending?.[k])s.lastAvg[k]=s.avg[k];
+      e.avcoAfter[k]=s.avg[k];
+    }
+    if(op==='receive')e.suggestedPrice=suggest(averageCost(s,item),s.policy);
+    if(op==='opening')delete s.pending[item];
+    if(e.openingUndo)s.pending[e.id]=true;
+    s.events.push(e);return e;
+  }
+  function migrate(v2){
+    const s=empty(v2.recipes);s.stock={...v2.stock};s.lots=v2.lots;s.events=v2.events;
+    for(const k of Object.keys(s.stock)){
+      const all=s.lots.filter(l=>l.item===k),live=all.filter(l=>l.left);
+      s.prices[k]=all.filter(l=>l.sell!==null).at(-1)?.sell??null;
+      if(!s.stock[k])continue;
+      s.pending[k]=true;
+      if(live.every(l=>l.cost!==null))post(s,'opening',k,s.stock[k],{cost:live.reduce((a,l)=>a+l.left*l.cost,0)/s.stock[k]});
+    }
+    return s;
+  }
+  function report(s,from=-Infinity,to=Infinity){
+    const balance=Object.fromEntries(Object.keys(accounts).map(k=>[k,0]));
+    const period={...balance}, quantities=zeros(), values=zeros(), movements=[], entries=[];
+    let purchases=0,opening=0,beginning=0;
+    for(const e of s.events){
+      if(e.status!=='posted'||e.at>to)continue;
+      const inside=e.at>=from;
+      for(const j of e.journal){
+        balance[j.dr]+=j.amount;balance[j.cr]-=j.amount;
+        if(inside){period[j.dr]+=j.amount;period[j.cr]-=j.amount;entries.push({...j,e})}
+        else beginning+=((j.dr==='inventory')-(j.cr==='inventory'))*j.amount;
+      }
+      for(const [k,v] of Object.entries(e.values))values[k]+=v;
+      for(const [k,q] of Object.entries(e.delta))quantities[k]+=q;
+      if(e.op==='opening')quantities[e.id]+=e.openingQty;
+      if(e.openingUndo)quantities[e.id]-=e.openingQty;
+      if(!inside)continue;
+      movements.push(e);
+      if(e.op==='receive')purchases+=e.amount;
+      if(e.op==='reverse'&&s.events.find(d=>d.doc===e.source)?.op==='receive')purchases-=e.amount;
+      if(e.op==='opening')opening+=e.amount;
+      if(e.openingUndo)opening-=e.amount;
+    }
+    const costs=b=>categories.reduce((n,k)=>n+b[k],b.waste);
+    const gross=-period.sales-period.cogs,net=gross-costs(period);
+    const assets=balance.cash+balance.ar+balance.inventory, liabilities=-balance.ap, equity=-balance.capital-balance.sales-balance.cogs-costs(balance);
+    const inventoryDiff=beginning+opening+purchases-period.cogs-period.waste-balance.inventory;
+    return {balance,period,quantities,values,movements,entries,purchases,opening,beginning,gross,net,expenses:costs(period),assets,liabilities,equity,inventoryDiff};
+  }
+  function sample(recipes){
+    const s=empty(recipes);setPrice(s,'bread',100);
+    post(s,'capital','capital',1,{amount:10000});post(s,'receive','bread',100,{cost:50});
+    post(s,'sale','bread',20);post(s,'receive','bread',80,{cost:75,payment:'credit'});
+    setPrice(s,'bread',125);post(s,'sale','bread',40,{payment:'credit'});
+    post(s,'expense','electricity',1,{amount:300});post(s,'expense','gas',1,{amount:150,payment:'credit'});return s;
+  }
+  return {accounts,categories,empty,setPolicy,beforeRounding,suggest,averageCost,productionQuote,setPrice,post,migrate,report,sample,cents};
+})();
+
+
+
+</script>
+<script>
+
+
+'use strict';
+const $=id=>document.getElementById(id);
+const paths={
+ dish:'M3 17h18M5 15a7 7 0 0 1 14 0M12 6V4M10 4h4M5 20h14',
+ home:'M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z',
+ box:'m3 7 9-4 9 4-9 5z M3 7v10l9 5 9-5V7 M12 12v10 M7 5l10 5',
+ book:'M6 3h13v18H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z M4 17h15 M9 7h6 M9 10h4',
+ log:'M4 4h16v16H4z M8 8h1 M12 8h5 M8 12h1 M12 12h5 M8 16h1 M12 16h5',
+ store:'M3 9l2-5h14l2 5 M4 10v10h16V10 M3 9q2 4 5 0 2 4 4 0 2 4 4 0 3 4 5 0 M9 20v-6h6v6',
+ prep:'M6 12a4 4 0 0 1 0-8q1 0 2 1a5 5 0 0 1 8 0q1-1 2-1a4 4 0 0 1 0 8v7H6z M6 16h12',
+ sale:'M3 4h3l2 11h10l3-8H7 M9 19a1 1 0 1 0 .1 0 M18 19a1 1 0 1 0 .1 0',
+ receive:'M4 14v6h16v-6 M12 3v12 M7 10l5 5 5-5', waste:'M4 6h16 M9 6V3h6v3 M6 6l1 15h10l1-15 M10 10v7 M14 10v7',
+ bread:'M5 11q-3-1-2-4 2-4 9-4t9 4q1 3-2 4v8H5z M9 8l-1 2 M14 8l-1 2',
+ cheese:'m3 12 12-8q5 1 6 8v7H3z M3 12h18 M8 15h1 M15 16h1',
+ leaf:'M4 17Q2 5 20 3q1 17-14 15 M3 21 15 9',
+ sandwich:'M3 13 12 4l9 9z M3 16l4 1 4-1 5 1 5-1 M3 20h18',
+ juice:'M6 7h12l-1 14H7z M12 7l2-5h4 M7 12h10',
+ edit:'m4 16 12-12 4 4L8 20H4z M14 6l4 4', plus:'M12 5v14 M5 12h14'};
+function icon(id){return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="'+paths[id]+'"/></svg>'}
+document.querySelectorAll('[data-icon]').forEach(el=>el.innerHTML=icon(el.dataset.icon));
+let items={};
+function displayItems(catalog){
+ const escape=text=>text.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
+ return Object.fromEntries(Object.entries(catalog).map(([id,{name,unit,type}])=>[id,[escape(name),escape(unit),type,'box',type==='raw'?'gold':type==='manufactured'?'sage':'blue']]));
+}
+const types={raw:'مادة أولية',ready:'صنف جاهز',manufactured:'مادة مصنّعة'};
+const ops={composition:['تركيبة المادة المصنّعة','حفظ التركيبة','تركيبة','sage'],addItem:['إضافة صنف','حفظ الصنف','صنف','blue'],receive:['استلام مواد','تسجيل الاستلام','استلام','blue'],prep:['تحضير وجبة','تأكيد التحضير','تحضير','gold'],sale:['تسجيل بيع','تأكيد البيع','بيع','sage'],waste:['تسجيل تالف','تأكيد التالف','تالف','pink']};
+Object.assign(ops,{
+ expense:['فاتورة مصروف','ترحيل المصروف','مصروف','gold'],capital:['إيداع رأس مال','ترحيل الإيداع','تمويل','sage'],
+ opening:['تقييم الرصيد الافتتاحي','ترحيل التقييم','رصيد افتتاحي','blue'],reverse:['عكس المستند','ترحيل القيد العكسي','عكس','pink'],
+ price:['تحديد سعر المبيع','حفظ السعر','سعر','sage'],policy:['سياسة التسعير','حفظ السياسة','سياسة','blue']});
+Object.assign(paths,{reports:'M3 20h18 M6 16v-5 M12 16V4 M18 16V8',price:'M3 4h8l10 10-7 7L3 10z M7 7h.1',expense:paths.log,capital:paths.receive,opening:paths.box,reverse:paths.log});
+const isPos=true; // Entry point for cashier role.
+const pages=isPos?{home:['نقطة البيع','store'],manufacture:['التصنيع','prep'],receipts:['فواتير البيع','log']}:
+ {home:['نظرة عامة','home'],stock:['المخزون','box'],history:['سجل الحركات','log'],pricing:['التسعير','price'],reports:['التقارير','reports']};
+function allows(op){
+ return isPos?['sale','prep'].includes(op):['addItem','composition','receive','waste','expense','capital','opening','reverse','price','policy'].includes(op);
+}
+const roleTitle=isPos?'نقطة البيع':'المخزون والمحاسبة';
+document.title='مقصف | '+roleTitle;
+$('roleLabel').textContent=roleTitle;
+const key='maqsaf-workbench-v4',fmt=n=>(Number(n)||0).toLocaleString('ar',{maximumFractionDigits:6}),today=new Date();
+$('date').textContent=today.toLocaleDateString('ar',{weekday:'long',day:'numeric',month:'long'});
+// The owner requested an empty ledger. Older clients use separate keys.
+for(const oldKey of ['maqsaf-workbench-v1','maqsaf-workbench-v2','maqsaf-workbench-v3']){
+ localStorage.removeItem(oldKey);
+}
+function read(){
+ const saved=localStorage.getItem(key);
+ if(saved){
+   const book=JSON.parse(saved);
+   items=displayItems(book.catalog);
+   return book;
+ }
+ items={};
+ return {...Books.empty({}),version:4,catalog:{}};
+}
+let state=read();
+let page='home',filter='all',historyFilter='all',mode='',timer;
+const badge=(symbol,color)=>'<span class="ic '+color+'">'+icon(symbol)+'</span>';
+const button=(op,label,cls='secondary',id='')=>'<button class="'+cls+'" data-op="'+op+'" data-id="'+id+'">'+icon(paths[op]?op:'edit')+(label||ops[op][0])+'</button>';
+function invoiceLink(doc){return '<button type="button" class="doclink" data-doc="'+doc+'">'+icon('log')+' عرض الفاتورة</button>'}
+function lotLabel(i){
+ const n=state.lots.filter(l=>l.item===i&&l.left>0).length;
+ if(n===0)return 'عرض الدفعات';
+ if(n===1)return 'دفعة واحدة';
+ if(n===2)return 'دفعتان';
+ return fmt(n)+(n<=10?' دفعات':' دفعة');
+}
+function inventory(ids){if(!ids.length)return '<p class="empty">'+(Object.keys(items).length?'لا توجد أصناف من هذا النوع.':'المخزون فارغ. أضف أول صنف لتسجيل دفعاته.')+'</p>';return '<div class="tablewrap"><table><thead><tr><th>الصنف</th><th>النوع</th><th>الرصيد المتاح</th>'+(page==='stock'?'<th>متوسط التكلفة</th><th>سعر المبيع</th>':'')+'<th>الدفعات</th></tr></thead><tbody>'+ids.map(i=>{let [name,unit,type,symbol,color]=items[i];return '<tr><td><span class="item">'+badge(symbol,color)+name+'</span></td><td><span class="tag '+color+'">'+types[type]+'</span>'+(type==='manufactured'&&page==='stock'?' <button class="lotlink" data-op="composition" data-id="'+i+'">التركيبة</button>':'')+'</td><td><b>'+fmt(state.stock[i])+'</b> <span class="note">'+unit+'</span></td>'+(page==='stock'?'<td>'+digits(Books.averageCost(state,i))+'</td><td>'+digits(state.prices[i])+'</td>':'')+'<td><button class="lotlink" data-lots="'+i+'">'+lotLabel(i)+'</button></td></tr>'}).join('')+'</tbody></table></div>'}
+function eventLabel(e){return items[e.id]?.[0]||Books.accounts[e.id]||''}
+function logList(events,details=false){return '<div class="loglist">'+(events.length?events.map(e=>'<div class="log">'+badge(e.op,ops[e.op][3])+'<div class="logmain"><strong>'+ops[e.op][2]+' '+eventLabel(e)+'</strong><small>'+(items[e.id]?fmt(e.q)+' '+items[e.id][1]:digits(e.amount/100))+'</small> '+invoiceLink(e.doc)+(details&&e.op==='prep'?'<div class="note">استهلاك '+Object.entries(e.delta).filter(([,v])=>v<0).map(([i,v])=>items[i][0]+' '+fmt(-v)+' '+items[i][1]).join('، ')+'</div>':'')+'</div><time>'+new Date(e.at).toLocaleString('ar',{...(details?{day:'numeric',month:'short'}:{}),hour:'2-digit',minute:'2-digit'})+'</time></div>').join(''):'<p class="empty">ما في حركات مسجّلة ضمن هالتصنيف.</p>')+'</div>'}
+function card(label,n,unit,symbol,color){return '<div class="kpi"><div class="kpicap">'+badge(symbol,color)+label+'</div><div class="row"><span class="qty">'+fmt(n)+'</span><span class="unit">'+unit+'</span></div></div>'}
+function home(){
+ const r=Books.report(state), lot=state.lots.at(-1);
+ const ticket=lot?'<div class="art"><div class="ticket back"></div><div class="ticket"><div class="cap">آخر دفعة واردة '+icon('box')+'</div><strong>'+items[lot.item][0]+'</strong><div class="ticketrow"><span>كمية الدفعة</span><b>'+fmt(lot.received)+' '+items[lot.item][1]+'</b></div><div class="ticketrow"><span>رقم الدفعة</span>'+serial(lot.code)+'</div><div class="barcode"></div></div></div>':'';
+ return '<section class="hero"><div><h1>المخزون والمحاسبة</h1><p>تابع أرصدة الأصناف والدفعات وسجّل فواتير المقصف.</p><div class="actions">'+(Object.keys(items).length?button('receive','استلام مواد','primary'):button('addItem','إضافة أول صنف','primary'))+button('expense')+'</div></div>'+ticket+'</section><div class="kpis">'+
+ card('قيمة المخزون المقيّم',r.balance.inventory/100,'','box','sage')+card('رصيد الصندوق',r.balance.cash/100,'','capital','gold')+card('المستحق للموردين',r.liabilities/100,'','log','blue')+
+ '</div><div class="grid"><section class="panel"><div class="panelhead"><h2>أرصدة الأصناف</h2><a class="link" href="#stock">عرض المخزون</a></div>'+inventory(Object.keys(items))+'</section><section class="panel"><div class="panelhead"><h2>آخر الحركات</h2><a class="link" href="#history">عرض الكل</a></div>'+logList(state.events.slice(-4).reverse())+'</section></div>';
+}
+function chips(values,active,attr){return '<div class="filters">'+Object.entries(values).map(([k,v])=>'<button class="chip '+(active===k?'on':'')+'" '+attr+'="'+k+'">'+v+'</button>').join('')+'</div>'}
+function stockPage(){return '<div class="pagehead"><h1>المخزون</h1><div class="actions">'+button('addItem',null,'primary')+(Object.keys(items).length?button('receive')+button('waste'):'')+'</div></div><section class="panel">'+chips({all:'الكل',raw:'مواد أولية',ready:'أصناف جاهزة',manufactured:'مواد مصنّعة'},filter,'data-filter')+inventory(Object.keys(items).filter(i=>filter==='all'||items[i][2]===filter))+'</section>'}
+function render(){page=location.hash.slice(1);if(!Object.hasOwn(pages,page))page='home';$('nav').innerHTML=Object.entries(pages).map(([k,[n,s]])=>'<a href="#'+k+'" class="navbtn '+(page===k?'active':'')+'" '+(page===k?'aria-current="page"':'')+'>'+icon(s)+n+'</a>').join('');$('main').innerHTML=isPos?posPage():page==='home'?home():page==='stock'?stockPage():page==='pricing'?pricingPage():page==='reports'?reportsPage():'<div class="pagehead"><h1>سجل الحركات</h1>'+button('expense',null,'primary')+'</div><section class="panel">'+chips({all:'كل الحركات',sale:'بيع',receive:'استلام',waste:'تالف',expense:'مصاريف',reverse:'عكس',capital:'تمويل',opening:'افتتاحي'},historyFilter,'data-hist')+logList(state.events.filter(e=>historyFilter==='all'||e.op===historyFilter).slice().reverse(),true)+'</section>'}
+const names={receive:'فاتورة شراء',sale:'فاتورة بيع',prep:'سند تصنيع',waste:'سند تالف',expense:'فاتورة مصروف',reverse:'سند عكسي',capital:'سند إيداع رأس مال',opening:'سند تقييم افتتاحي'};
+const digits=v=>v===null?'غير مسجّل':(Number(v)||0).toLocaleString('ar',{maximumFractionDigits:4});
+const serial=s=>'<bdi class="serial">'+s+'</bdi>';
+const line=(a,b)=>'<div class="summaryline"><span>'+a+'</span><b>'+b+'</b></div>';
+function numberField(id,label,value=''){
+ return '<label for="'+id+'">'+label+'</label><input id="'+id+'" type="number" inputmode="decimal" min="0" max="10000000000" step="0.01" required value="'+value+'">';
+}
+function show(op,selected){
+ if(!allows(op))return;
+ if(specialModes.includes(op))return specialForm(op,selected);
+ mode=op;$('error').textContent='';$('dt').textContent=ops[op][0];$('submit').textContent=ops[op][1];
+ const ids=Object.keys(items).filter(i=>mode==='prep'?state.catalog[i].type==='manufactured':mode==='receive'?state.catalog[i].type!=='manufactured':true);
+ if(!ids.length)return;
+   $('fields').innerHTML='<label for="choice">الصنف</label><select id="choice">'+ids.map(i=>'<option value="'+i+'" '+(i===selected?'selected':'')+'>'+items[i][0]+'</option>').join('')+'</select><div id="batchChoice"></div><label for="amount" id="amountLabel"></label><input type="number" min="1" step="1" id="amount" required value="1"><div id="pricing"></div><div id="fallback"></div><div class="summary" id="summary"></div>';
+   setupItem();
+ $('modal').showModal();
+}
+function setupItem(){
+ const i=$('choice').value;
+ const lots=state.lots.filter(l=>l.item===i&&l.left>0);
+ $('amountLabel').textContent='الكمية ('+items[i][1]+')';
+ $('batchChoice').innerHTML=['sale','waste'].includes(mode)?'<label for="batch">الصرف من الدفعة</label><select id="batch"><option value="">الأقدم أولاً — تلقائي</option>'+lots.map(l=>'<option value="'+l.code+'">'+l.code+' · متاح '+fmt(l.left)+'</option>').join('')+'</select>':'';
+ $('pricing').innerHTML=mode==='receive'?numberField('cost','تكلفة شراء الوحدة')+paymentField():mode==='sale'?paymentField():'';
+ $('fallback').innerHTML='';
+ summary();
+}
+function previewLines(i,q){
+ if(mode==='receive'||mode==='prep')return [];
+ return Ledger.plan(state,i,q,$('batch')?.value||'');
+}
+function getPrice(id){const el=$(id);return el&&el.value!==''?Number(el.value):null}
+function summary(){
+ const i=$('choice').value,q=Number($('amount').value);
+ $('error').textContent='';
+ let body='';
+ try{
+   if(!Number.isSafeInteger(q)||q<1)throw Error('أدخل كمية صحيحة أكبر من صفر.');
+   const lines=previewLines(i,q);
+   if(mode==='prep'){
+     const quote=Books.productionQuote(state,i,q);
+     body='<strong>المواد المطلوبة للتصنيع:</strong>'+quote.lines.map(l=>line(l.name+' ('+l.unit+')',fmt(l.needed)+' مطلوب / '+fmt(l.available)+' متاح'+(l.shortage>0?' — ناقص '+fmt(l.shortage):''))).join('')+
+       line('التكلفة المتوقعة للتصنيع',quote.estimated===null?'غير مسجّلة':digits(quote.estimated))+
+       (!quote.enough?'<p class="losswarn">المواد الأولية غير كافية. لا يمكن تأكيد التصنيع.</p>':'')+
+       (quote.missingCost?'<p class="losswarn">متوسط تكلفة أحد المكونات غير مسجّل.</p>':'');
+   }else {
+   if(state.pending[i])throw Error(isPos?'تقييم الصنف غير مكتمل. راجع مسؤول المخزون.':'أكمل تقييم الصنف من صفحة التسعير.');
+   if(mode==='receive'){
+     const cost=getPrice('cost'),avg=cost===null?null:(state.value[i]/100+q*cost)/(state.stock[i]+q);
+      const recipeCost = Books.averageCost(state,i);
+      body=line('إجمالي الشراء',cost===null?'—':digits(Ledger.round(q*cost)))+line('المتوسط المحاسبي بعد الشراء',digits(avg))+
+        (state.catalog[i].type==='manufactured'?line('متوسط تكلفة المكوّنات',digits(recipeCost)):'')+
+        line('سعر المبيع الحالي',digits(state.prices[i]))+line('مقترح السياسة',digits(Books.suggest(state.catalog[i].type==='manufactured'?recipeCost:avg,state.policy)));
+     if(avg!==null&&state.prices[i]!==null&&state.prices[i]<(state.catalog[i].type==='manufactured'?recipeCost??avg:avg))body+='<div class="losswarn">سعر المبيع الحالي أقل من متوسط التكلفة بعد الشراء.</div>';
+   }else{
+     for(const l of lines)body+=line('الدفعة '+serial(l.lot),fmt(l.q)+' '+items[i][1]);
+     if(mode==='waste')body+=line('التكلفة بالمتوسط',digits(Ledger.round(q*state.avg[i])));
+     if(mode==='sale'){
+       const p=state.prices[i];body+=line('سعر بيع الوحدة',digits(p))+line('إجمالي البيع',p===null?'—':digits(Ledger.round(q*p)));
+       if(p===null)body+='<p class="losswarn">سعر البيع غير محدد. راجع مسؤول التسعير.</p>';
+        lossControl(p,Books.averageCost(state,i));
+     }
+   }
+   }
+ }catch(err){body='<span class="note">'+err.message+'</span>';$('fallback').innerHTML=''}
+ $('summary').innerHTML=body;
+}
+let returnLot='';
+function paper(html){
+ $('paper').innerHTML=html;
+ if(!$('document').open)$('document').showModal();
+}
+const closePaper='<button class="iconbtn" data-close-paper aria-label="إغلاق المستند">×</button>';
+const dateTime=t=>new Date(t).toLocaleString('ar',{year:'numeric',month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
+function invoice(doc,from='',book=state){
+ const e=book.events.find(e=>e.doc===doc);if(!e)return;
+  if(isPos){if(e.op==='sale')posReceipt(e);else if(e.op==='prep')posProductionReceipt(e);return}
+ if(e.status==='posted')return postedInvoice(e,from,book);
+
+ returnLot=from;
+ const field=e.op==='sale'?'sell':'cost';
+ const totals=e.op==='prep'?e.lines.filter(l=>l.dir===1):e.lines;
+ const total=Ledger.total(totals,field);
+ const body=e.lines.map(l=>'<tr><td><b>'+items[l.item][0]+'</b>'+(e.op==='prep'?'<small>'+(l.dir<0?'مكوّن مستهلك':'وجبة ناتجة')+'</small>':'')+'</td><td>'+serial(l.lot)+'</td><td>'+fmt(l.q)+' '+items[l.item][1]+'</td><td>'+digits(l.cost)+'</td><td>'+digits(l.sell)+'</td><td>'+digits(Ledger.total([l],field))+'</td></tr>').join('');
+ paper('<div class="paperbar"><span>'+icon('log')+' مستند مؤرشف · قبل تطبيق المتوسط</span>'+closePaper+'</div><article class="invoice"><div class="invoicehead"><div><div class="paperbrand">'+icon('dish')+' مقصف</div><h2 id="paperTitle">'+names[e.op]+'</h2></div><div class="docmeta">'+serial(e.doc)+'<small>'+dateTime(e.at)+'</small></div></div><div class="tablewrap"><table><thead><tr><th>الصنف</th><th>الدفعة</th><th>الكمية</th><th>جملة / تكلفة الوحدة</th><th>مبيع الوحدة</th><th>المبلغ</th></tr></thead><tbody>'+body+'</tbody></table></div><div class="billtotal"><span>'+({receive:'إجمالي الشراء',sale:'إجمالي البيع',prep:'تكلفة الوجبات الناتجة',waste:'تكلفة التالف'}[e.op])+'</span><strong>'+digits(total)+'</strong></div>'+(total===null?'<p class="note">هذه الحركة تشمل دفعة لم يُسجّل سعرها.</p>':'')+'</article><div class="paperactions">'+(from?'<button class="secondary" data-lots="'+from+'">العودة إلى دفعات الصنف</button>':'')+'<button class="primary" data-print>طباعة المستند</button></div>');
+}
+function lotView(i){
+ if(isPos)return;
+ returnLot=i;
+ const lots=state.lots.filter(l=>l.item===i).slice().reverse();
+ const related=state.events.filter(e=>e.lines.some(l=>l.item===i)).slice().reverse();
+ paper('<div class="paperbar"><span>'+icon('box')+' مخزون الدفعات</span>'+closePaper+'</div><div class="lotbody"><h2 id="paperTitle">دفعات '+items[i][0]+'</h2><p class="note">الرصيد المتاح '+fmt(state.stock[i])+' '+items[i][1]+'</p><div class="tablewrap"><table><thead><tr><th>الدفعة</th><th>الوارد</th><th>المتبقي</th><th>الجملة / التكلفة</th><th>المبيع وقت الإدخال</th><th>مستند الإدخال</th></tr></thead><tbody>'+lots.map(l=>'<tr><td>'+serial(l.code)+'</td><td>'+fmt(l.received)+'</td><td><b>'+fmt(l.left)+'</b></td><td>'+digits(l.cost)+'</td><td>'+digits(l.sell)+'</td><td>'+invoiceLink(l.doc)+'</td></tr>').join('')+'</tbody></table></div>'+(related.length?'<h3>حركات الصنف</h3>'+logList(related):'<p class="empty">ما في دفعات مسجّلة بعد.</p>')+'</div>');
+}
+function save(){
+ if(!allows(mode))throw Error('العملية غير متاحة ضمن هذه الواجهة.');
+ const next=read();let event;
+ if(specialModes.includes(mode))event=saveSpecial(next);
+ else{
+   event=Books.post(next,mode,$('choice').value,Number($('amount').value),{
+     cost:getPrice('cost'),selected:$('batch')?.value,payment:$('pay')?.value,approved:$('approveLoss')?.checked
+   });
+ }
+ localStorage.setItem(key,JSON.stringify(next));state=next;items=displayItems(next.catalog);render();$('modal').close();
+ if(event)invoice(event.doc);
+ else{$('toast').textContent='تم حفظ التعديلات';$('toast').classList.add('show');clearTimeout(timer);timer=setTimeout(()=>$('toast').classList.remove('show'),2000)}
+}
+$('main').addEventListener('click',e=>{
+ const b=e.target.closest('button');if(!b)return;
+ if(b.dataset.doc)invoice(b.dataset.doc);
+ if(b.dataset.report){activeReport=b.dataset.report;render()}
+ if(b.dataset.lots)lotView(b.dataset.lots);
+ if(b.dataset.op)show(b.dataset.op,b.dataset.id);
+ if(b.dataset.filter){filter=b.dataset.filter;render()}
+ if(b.dataset.hist){historyFilter=b.dataset.hist;render()}
+});
+$('paper').addEventListener('click',e=>{
+ const b=e.target.closest('button');if(!b)return;
+ if(b.hasAttribute('data-close-paper'))$('document').close();
+ else if(b.dataset.reverse){$('document').close();show('reverse',b.dataset.reverse)}
+ else if(b.hasAttribute('data-print'))window.print();
+ else if(b.dataset.lots)lotView(b.dataset.lots);
+ else if(b.dataset.doc)invoice(b.dataset.doc,returnLot);
+});
+$('close').onclick=()=>$('modal').close();
+$('fields').oninput=e=>{if(specialModes.includes(mode)){specialPreview();return}if(e.target.id==='choice')setupItem();else summary()};
+$('form').onsubmit=async e=>{e.preventDefault();$('submit').disabled=true;try{if(navigator.locks)await navigator.locks.request(key,save);else save()}catch(err){$('error').textContent=err.message}finally{$('submit').disabled=false}};
+window.addEventListener('hashchange',render);
+window.addEventListener('storage',e=>{if(e.key===key){state=read();render();if($('modal').open){if(specialModes.includes(mode))specialPreview();else summary()}}});
+
+
+
+</script>
+<script>
+'use strict';
+function posPage(){
+ const sales=state.events.filter(e=>e.op==='sale').slice().reverse();
+ const production=state.events.filter(e=>e.op==='prep').slice().reverse();
+ if(page==='receipts'){
+   return '<div class="pagehead"><h1>فواتير البيع</h1>'+ (Object.keys(items).length?button('sale','بيع جديد','primary'):'')+'</div><section class="panel">'+logList(sales,true)+'</section>';
+ }
+ if(page==='manufacture'){
+   const ids=Object.keys(items).filter(id=>state.catalog[id].type==='manufactured');
+   const rows=ids.map(id=>{
+     const [name,unit]=items[id];
+     const recipe=state.catalog[id].components||{};
+     let quote;try{quote=Books.productionQuote(state,id,1)}catch(e){}
+     const details=Object.entries(recipe).map(([k,v])=>(items[k]?.[0]||k)+' '+fmt(v)+' '+(items[k]?.[1]||'')).join('، ');
+     return ['<b>'+name+'</b><small class="note">'+details+'</small>',fmt(state.stock[id])+' '+unit,digits(Books.averageCost(state,id)),button('prep','تصنيع','primary',id)];
+   });
+   return '<div class="pagehead"><h1>تصنيع المواد</h1>'+(ids.length?button('prep','تصنيع جديد','primary'):'')+'</div>'+
+     '<section class="panel"><div class="panelhead"><div><h2>المواد المصنّعة</h2><p class="note">عند تأكيد التصنيع تُخصم المكونات من المخزون وتُضاف الكمية الناتجة تلقائياً.</p></div></div>'+
+     (rows.length?table(['المادة والتركيبة','المخزون المصنّع','تكلفة التركيبة للوحدة','الإجراء'],rows):'<p class="empty">لم تُضف مواد مصنّعة بعد. أضفها وتركيبتها من واجهة الإدارة.</p>')+'</section>'+
+     '<section class="panel" style="margin-top:18px"><div class="panelhead"><h2>سجل التصنيع</h2></div>'+logList(production.slice(0,15),true)+'</section>';
+ }
+ const rows=Object.keys(items).map(id=>{
+   const [name,unit,type,symbol,color]=items[id];
+   let action='';
+   if(state.stock[id]>0 && !state.pending[id] && state.prices[id]!==null)action=button('sale','بيع','primary',id);
+   else action='<span class="note">'+(!state.stock[id]?'نفد المخزون':'بانتظار التسعير أو التقييم')+'</span>';
+   if(type==='manufactured')action+=' '+button('prep','تصنيع','secondary',id);
+   return ['<span class="item">'+badge(symbol,color)+name+'</span>',fmt(state.stock[id])+' '+unit,digits(state.prices[id]),action];
+ });
+ return '<div class="pagehead"><h1>نقطة البيع</h1>'+ (Object.values(state.catalog).some(i=>i.type==='manufactured')?button('prep','تصنيع مواد','primary'):'')+'</div><div class="grid"><section class="panel"><div class="panelhead"><h2>الأصناف</h2></div>'+(rows.length?table(['الصنف','المتاح','سعر الوحدة',''],rows):'<p class="empty">لا توجد أصناف بعد.</p>')+'</section><section class="panel"><div class="panelhead"><h2>آخر فواتير البيع</h2><a class="link" href="#receipts">عرض الكل</a></div>'+logList(sales.slice(0,5))+'</section></div>';
+}
+function posReceipt(e){
+ const rows=e.lines.map(l=>[items[l.item][0],serial(l.lot),fmt(l.q)+' '+items[l.item][1],digits(l.sell),digits(Ledger.total([l],'sell'))]);
+ const reversed=state.events.find(d=>d.source===e.doc);
+ const total=e.status==='posted'?amount(e.amount):digits(Ledger.total(e.lines,'sell'));
+ paper('<div class="paperbar"><span>'+icon('sale')+' نقطة البيع</span>'+closePaper+'</div><article class="invoice"><div class="invoicehead"><div><div class="paperbrand">مقصف</div><h2 id="paperTitle">فاتورة بيع</h2></div><div class="docmeta">'+serial(e.doc)+'<small>'+dateTime(e.at)+'</small></div></div>'+table(['الصنف','الدفعة','الكمية','سعر الوحدة','المبلغ'],rows)+(e.payment?line('طريقة الدفع',cashText(e)):'')+'<div class="billtotal"><b>إجمالي البيع</b><strong>'+total+'</strong></div>'+(reversed?line('تم عكس الفاتورة',serial(reversed.doc)):'')+'</article><div class="paperactions"><button class="primary" data-print>طباعة الفاتورة</button></div>');
+}
+function posProductionReceipt(e){
+ const rows=e.lines.map(l=>[(l.dir<0?'استهلاك: ':'ناتج: ')+items[l.item][0],fmt(l.q)+' '+items[l.item][1],digits(l.unit_cost),amount(l.value)]);
+ const reversed=state.events.find(d=>d.source===e.doc);
+ paper('<div class="paperbar"><span>'+icon('prep')+' نقطة البيع · التصنيع</span>'+closePaper+'</div><article class="invoice"><div class="invoicehead"><div><div class="paperbrand">مقصف</div><h2 id="paperTitle">سند تصنيع</h2></div><div class="docmeta">'+serial(e.doc)+'<small>'+dateTime(e.at)+'</small></div></div>'+table(['المادة','الكمية','متوسط تكلفة الوحدة','التكلفة'],rows)+line('الكمية المصنّعة',fmt(e.q)+' '+items[e.id][1])+line('تكلفة الوحدة المصنّعة',digits(e.productionUnitCost))+'<div class="billtotal"><b>إجمالي تكلفة المواد المستخدمة</b><strong>'+amount(e.amount)+'</strong></div><p class="note">تحويل داخلي للمخزون: لا تُسجّل فاتورة شراء ولا حركة نقدية.</p>'+(reversed?line('تم عكس السند',serial(reversed.doc)):'')+'</article><div class="paperactions"><button class="primary" data-print>طباعة سند التصنيع</button></div>');
+}
+
+</script>
+<script>
+
+
+'use strict';
+// Minimal cashier-only view helpers. No inventory editing, finance reports, or pricing UI.
+const specialModes=[];
+const cashText=e=>e.payment==='credit'?'على الحساب':'نقداً';
+const amount=c=>digits(c/100);
+function table(headers,rows){
+ return '<div class="tablewrap"><table><thead><tr>'+headers.map(h=>'<th>'+h+'</th>').join('')+'</tr></thead><tbody>'+rows.map(r=>'<tr>'+r.map(c=>'<td>'+c+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>'+(rows.length?'':'<p class="empty">لا توجد حركات ضمن الفترة المحددة.</p>');
+}
+function paymentField(){
+ return '<label for="pay">طريقة الدفع</label><select id="pay"><option value="cash">نقداً</option><option value="credit">على الحساب</option></select>';
+}
+function lossControl(p,avg){
+ const host=$('fallback');if(!host)return;
+ if(p===null||avg===null||p>=avg-1e-10){host.innerHTML='';return}
+ const block=state.policy.loss==='block';
+ const warn='<div class="losswarn"><b>تحذير سعر خاسر</b><div>'+(block?'سياسة المقصف تمنع الترحيل بهذا السعر.':'يتطلب اعتماد هذا السعر تأكيداً صريحاً.')+'</div></div>';
+ const token=[mode,p,avg,$('choice')?.value,$('amount')?.value].join('|');
+ const previous=host.dataset.confirmedFor===token&&$('approveLoss')?.checked;host.dataset.confirmedFor=token;
+ host.innerHTML=warn+(block?'':'<label class="confirmLoss"><input type="checkbox" id="approveLoss"> أوافق على السعر الأقل من التكلفة</label>');
+ if($('approveLoss'))$('approveLoss').checked=previous||false;
+}
+render();
+
+
+</script></body></html>
