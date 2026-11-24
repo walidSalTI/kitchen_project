@@ -16,7 +16,8 @@
 <main class="wrap" id="main"><div class="pagehead"><h1>المخزون</h1><div class="actions"><button class="primary" data-id="" data-op="addItem"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m4 16 12-12 4 4L8 20H4z M14 6l4 4"></path></svg>إضافة صنف</button></div></div><section class="panel"><div class="filters"><button class="chip on" data-filter="all">الكل</button><button class="chip" data-filter="raw">مواد أولية</button><button class="chip" data-filter="ready">أصناف جاهزة</button><button class="chip" data-filter="manufactured">مواد مصنّعة</button></div><p class="empty">المخزون فارغ. أضف أول صنف لتسجيل دفعاته.</p></section></main>
 <dialog id="modal"><form id="form"><div class="dhead"><h2 id="dt"></h2><button aria-label="إغلاق" class="iconbtn" id="close" type="button">×</button></div><div id="fields"></div><p id="error" role="alert"></p><button class="primary submit" id="submit" type="submit"></button></form></dialog>
 <div id="toast" role="status"></div>
-<dialog aria-labelledby="paperTitle" id="document"><div id="paper"></div></dialog><script>
+<dialog aria-labelledby="paperTitle" id="document"><div id="paper"></div></dialog><script src="../manage.js"></script>
+<script>
 
 
 // Quantities use the base stock unit. Prices are per unit, in the same currency.
@@ -212,6 +213,7 @@ const Books = (() => {
       priced(k);addLine(k,1,'LOT-'+String(s.lots.length+1).padStart(4,'0'),n,cost,s.prices[k],value);
     }
     if(['receive','sale','waste','prep'].includes(op)){
+      check(!s.catalog?.[item]?.archived,'الصنف مؤرشف.');
       check(Object.hasOwn(s.stock,item)&&Number.isSafeInteger(q)&&q>0,'أدخل كمية صحيحة موجبة.');
     }
     if(op==='receive'){
@@ -414,7 +416,7 @@ function lotLabel(i){
  if(n===2)return 'دفعتان';
  return fmt(n)+(n<=10?' دفعات':' دفعة');
 }
-function inventory(ids){if(!ids.length)return '<p class="empty">'+(Object.keys(items).length?'لا توجد أصناف من هذا النوع.':'المخزون فارغ. أضف أول صنف لتسجيل دفعاته.')+'</p>';return '<div class="tablewrap"><table><thead><tr><th>الصنف</th><th>النوع</th><th>الرصيد المتاح</th>'+(page==='stock'?'<th>متوسط التكلفة</th><th>سعر المبيع</th>':'')+'<th>الدفعات</th></tr></thead><tbody>'+ids.map(i=>{let [name,unit,type,symbol,color]=items[i];return '<tr><td><span class="item">'+badge(symbol,color)+name+'</span></td><td><span class="tag '+color+'">'+types[type]+'</span>'+(type==='manufactured'&&page==='stock'?' <button class="lotlink" data-op="composition" data-id="'+i+'">التركيبة</button>':'')+'</td><td><b>'+fmt(state.stock[i])+'</b> <span class="note">'+unit+'</span></td>'+(page==='stock'?'<td>'+digits(Books.averageCost(state,i))+'</td><td>'+digits(state.prices[i])+'</td>':'')+'<td><button class="lotlink" data-lots="'+i+'">'+lotLabel(i)+'</button></td></tr>'}).join('')+'</tbody></table></div>'}
+function inventory(ids){if(!ids.length)return '<p class="empty">'+(Object.keys(items).length?'لا توجد أصناف من هذا النوع.':'المخزون فارغ. أضف أول صنف لتسجيل دفعاته.')+'</p>';return '<div class="tablewrap"><table><thead><tr><th>الصنف</th><th>النوع</th><th>الرصيد المتاح</th>'+(page==='stock'?'<th>متوسط التكلفة</th><th>سعر المبيع</th>':'')+'<th>الدفعات</th>'+(page==='stock'?'<th>الإدارة</th>':'')+'</tr></thead><tbody>'+ids.map(i=>{let [name,unit,type,symbol,color]=items[i];return '<tr><td><span class="item">'+badge(symbol,color)+name+'</span></td><td><span class="tag '+color+'">'+types[type]+'</span>'+(type==='manufactured'&&page==='stock'?' <button class="lotlink" data-op="composition" data-id="'+i+'">التركيبة</button>':'')+'</td><td><b>'+fmt(state.stock[i])+'</b> <span class="note">'+unit+'</span></td>'+(page==='stock'?'<td>'+digits(Books.averageCost(state,i))+'</td><td>'+digits(state.prices[i])+'</td>':'')+'<td><button class="lotlink" data-lots="'+i+'">'+lotLabel(i)+'</button></td>'+ (page==='stock'?'<td>'+catalogActions(i)+'</td>':'')+'</tr>'}).join('')+'</tbody></table></div>'}
 function eventLabel(e){return items[e.id]?.[0]||Books.accounts[e.id]||''}
 function logList(events,details=false){return '<div class="loglist">'+(events.length?events.map(e=>'<div class="log">'+badge(e.op,ops[e.op][3])+'<div class="logmain"><strong>'+ops[e.op][2]+' '+eventLabel(e)+'</strong><small>'+(items[e.id]?fmt(e.q)+' '+items[e.id][1]:digits(e.amount/100))+'</small> '+invoiceLink(e.doc)+(details&&e.op==='prep'?'<div class="note">استهلاك '+Object.entries(e.delta).filter(([,v])=>v<0).map(([i,v])=>items[i][0]+' '+fmt(-v)+' '+items[i][1]).join('، ')+'</div>':'')+'</div><time>'+new Date(e.at).toLocaleString('ar',{...(details?{day:'numeric',month:'short'}:{}),hour:'2-digit',minute:'2-digit'})+'</time></div>').join(''):'<p class="empty">ما في حركات مسجّلة ضمن هالتصنيف.</p>')+'</div>'}
 function card(label,n,unit,symbol,color){return '<div class="kpi"><div class="kpicap">'+badge(symbol,color)+label+'</div><div class="row"><span class="qty">'+fmt(n)+'</span><span class="unit">'+unit+'</span></div></div>'}
@@ -426,8 +428,8 @@ function home(){
  '</div><div class="grid"><section class="panel"><div class="panelhead"><h2>أرصدة الأصناف</h2><a class="link" href="#stock">عرض المخزون</a></div>'+inventory(Object.keys(items))+'</section><section class="panel"><div class="panelhead"><h2>آخر الحركات</h2><a class="link" href="#history">عرض الكل</a></div>'+logList(state.events.slice(-4).reverse())+'</section></div>';
 }
 function chips(values,active,attr){return '<div class="filters">'+Object.entries(values).map(([k,v])=>'<button class="chip '+(active===k?'on':'')+'" '+attr+'="'+k+'">'+v+'</button>').join('')+'</div>'}
-function stockPage(){return '<div class="pagehead"><h1>المخزون</h1><div class="actions">'+button('addItem',null,'primary')+(Object.keys(items).length?(Object.values(state.catalog).some(i=>i.type!=='manufactured')?button('receive'):'')+button('waste'):'')+'</div></div><section class="panel">'+chips({all:'الكل',raw:'مواد أولية',ready:'أصناف جاهزة',manufactured:'مواد مصنّعة'},filter,'data-filter')+inventory(Object.keys(items).filter(i=>filter==='all'||items[i][2]===filter))+'</section>'}
-const HIDDEN_HISTORY_OPS=['opening','capital','reverse'];
+function stockPage(){return '<div class="pagehead"><h1>المخزون</h1><div class="actions">'+button('addItem',null,'primary')+(Object.keys(items).length?(Object.values(state.catalog).some(i=>i.type!=='manufactured')?button('receive'):'')+button('waste'):'')+'</div></div><section class="panel">'+chips({all:'الكل',raw:'مواد أولية',ready:'أصناف جاهزة',manufactured:'مواد مصنّعة',archived:'المؤرشفة'},filter,'data-filter')+inventory(Object.keys(items).filter(i=>filter==='archived'?state.catalog[i].archived:!state.catalog[i].archived&&(filter==='all'||items[i][2]===filter)))+'</section>'}
+const HIDDEN_HISTORY_OPS=[];
 const HISTORY_COLORS={sale:'#276b4e',receive:'#457080',prep:'#c9962f',waste:'#c9714a',expense:'#8a6bb0',addItem:'#5aa6a0',composition:'#8fb85a',price:'#d6a0a8',policy:'#8c8c7a'};
 function historyPage(){
  const evs=state.events.filter(e=>ops[e.op]&&!HIDDEN_HISTORY_OPS.includes(e.op));
@@ -464,7 +466,7 @@ function show(op,selected){
  if(!allows(op))return;
  if(specialModes.includes(op))return specialForm(op,selected);
  mode=op;$('error').textContent='';$('dt').textContent=ops[op][0];$('submit').textContent=ops[op][1];
- const ids=Object.keys(items).filter(i=>mode==='prep'?state.catalog[i].type==='manufactured':mode==='receive'?state.catalog[i].type!=='manufactured':true);
+ const ids=activeIds().filter(i=>mode==='prep'?state.catalog[i].type==='manufactured':mode==='receive'?state.catalog[i].type!=='manufactured':true);
  if(!ids.length)return;
    $('fields').innerHTML='<label for="choice">الصنف</label><select id="choice">'+ids.map(i=>'<option value="'+i+'" '+(i===selected?'selected':'')+'>'+items[i][0]+'</option>').join('')+'</select><div id="batchChoice"></div><label for="amount" id="amountLabel"></label><input type="number" min="1" step="1" id="amount" required value="1"><div id="pricing"></div><div id="fallback"></div><div class="summary" id="summary"></div>';
    setupItem();
@@ -546,20 +548,22 @@ function lotView(i){
  paper('<div class="paperbar"><span>'+icon('box')+' مخزون الدفعات</span>'+closePaper+'</div><div class="lotbody"><h2 id="paperTitle">دفعات '+items[i][0]+'</h2><p class="note">الرصيد المتاح '+fmt(state.stock[i])+' '+items[i][1]+'</p><div class="tablewrap"><table><thead><tr><th>الدفعة</th><th>الوارد</th><th>المتبقي</th><th>الجملة / التكلفة</th><th>المبيع وقت الإدخال</th><th>مستند الإدخال</th></tr></thead><tbody>'+lots.map(l=>'<tr><td>'+serial(l.code)+'</td><td>'+fmt(l.received)+'</td><td><b>'+fmt(l.left)+'</b></td><td>'+digits(l.cost)+'</td><td>'+digits(l.sell)+'</td><td>'+invoiceLink(l.doc)+'</td></tr>').join('')+'</tbody></table></div>'+(related.length?'<h3>حركات الصنف</h3>'+logList(related):'<p class="empty">ما في دفعات مسجّلة بعد.</p>')+'</div>');
 }
 function save(){
- if(!allows(mode))throw Error('العملية غير متاحة ضمن هذه الواجهة.');
+ if(mode!=='manage'&&!allows(mode))throw Error('العملية غير متاحة ضمن هذه الواجهة.');
  const next=read();let event;
- if(specialModes.includes(mode))event=saveSpecial(next);
+ if(mode==='manage')event=submitManagement(next);
+ else if(specialModes.includes(mode))event=saveSpecial(next);
  else{
    event=Books.post(next,mode,$('choice').value,Number($('amount').value),{
      cost:getPrice('cost'),selected:$('batch')?.value,payment:$('pay')?.value,approved:$('approveLoss')?.checked
    });
  }
  localStorage.setItem(key,JSON.stringify(next));state=next;items=displayItems(next.catalog);render();$('modal').close();
- if(event)invoice(event.doc);
- else{$('toast').textContent='تم حفظ التعديلات';$('toast').classList.add('show');clearTimeout(timer);timer=setTimeout(()=>$('toast').classList.remove('show'),2000)}
+ if(event&&!(isPos&&event.op==='reverse'))invoice(event.doc);
+ else{$('toast').textContent=event?.op==='reverse'?'تم إلغاء المستند':'تم حفظ التعديلات';$('toast').classList.add('show');clearTimeout(timer);timer=setTimeout(()=>$('toast').classList.remove('show'),2000)}
 }
 $('main').addEventListener('click',e=>{
  const b=e.target.closest('button,[data-hist]');if(!b)return;
+ if(b.dataset.manage){manageForm(b.dataset.manage,b.dataset.key);return}
  if(b.dataset.doc)invoice(b.dataset.doc);
  if(b.dataset.report){activeReport=b.dataset.report;render()}
  if(b.dataset.lots)lotView(b.dataset.lots);
@@ -569,6 +573,7 @@ $('main').addEventListener('click',e=>{
 });
 $('paper').addEventListener('click',e=>{
  const b=e.target.closest('button');if(!b)return;
+ if(b.dataset.manage){manageForm(b.dataset.manage,b.dataset.key);return}
  if(b.hasAttribute('data-close-paper'))$('document').close();
  else if(b.dataset.reverse){$('document').close();show('reverse',b.dataset.reverse)}
  else if(b.hasAttribute('data-print'))window.print();
@@ -576,10 +581,10 @@ $('paper').addEventListener('click',e=>{
  else if(b.dataset.doc)invoice(b.dataset.doc,returnLot);
 });
 $('close').onclick=()=>$('modal').close();
-$('fields').oninput=e=>{if(specialModes.includes(mode)){specialPreview();return}if(e.target.id==='choice')setupItem();else summary()};
+$('fields').oninput=e=>{if(mode==='manage')return;if(specialModes.includes(mode)){specialPreview();return}if(e.target.id==='choice')setupItem();else summary()};
 $('form').onsubmit=async e=>{e.preventDefault();$('submit').disabled=true;try{if(navigator.locks)await navigator.locks.request(key,save);else save()}catch(err){$('error').textContent=err.message}finally{$('submit').disabled=false}};
 window.addEventListener('hashchange',render);
-window.addEventListener('storage',e=>{if(e.key===key){state=read();render();if($('modal').open){if(specialModes.includes(mode))specialPreview();else summary()}}});
+window.addEventListener('storage',e=>{if(e.key===key){state=read();render();if($('modal').open&&mode!=='manage'){if(specialModes.includes(mode))specialPreview();else summary()}}});
 
 
 
@@ -610,12 +615,12 @@ function lossControl(p,avg){
 }
 function pricingPage(){
  const pol=state.policy;
- const rows=Object.keys(items).map(k=>{
+ const rows=activeIds().map(k=>{
    const avg=Books.averageCost(state,k),sell=state.prices[k];
    const alert=avg!==null&&sell!==null&&sell<avg;
-   return [items[k][0],digits(avg),digits(sell)+(alert?' <span class="lossflag">خاسر</span>':''),digits(Books.suggest(avg,pol)),button('price','تعديل السعر','secondary',k)+(state.pending[k]?button('opening','تقييم الرصيد','primary',k):'')];
+   return [items[k][0],digits(avg),digits(sell)+(alert?' <span class="lossflag">خاسر</span>':''),digits(Books.suggest(avg,pol)),button('price','تعديل السعر','secondary',k)+(sell!==null?manageButton('clearPrice',k,'إزالة السعر'):'')+(state.pending[k]?button('opening','تقييم الرصيد','primary',k):'')];
  });
- return '<div class="pagehead"><h1>تسعير الأصناف</h1>'+button('policy',null,'primary')+'</div><section class="panel"><div class="panelhead"><div><h2>أسعار البيع المعتمدة</h2><p class="note">'+(pol.kind==='margin'?'هامش ربح':'إضافة على التكلفة')+' '+digits(pol.rate)+'٪ · تقريب للأعلى إلى '+digits(pol.step)+' · '+(pol.loss==='warn'?'تحذير قبل البيع بخسارة':'منع البيع بخسارة')+'</p><p class="note">للمواد المصنّعة: متوسط التكلفة يحسب تلقائياً من كميات المكوّنات ومتوسط تكلفتها الحالي. تقييم الفواتير والمخزون المحاسبي التاريخي لا يتغيّر.</p></div></div>'+table(['الصنف','متوسط التكلفة','سعر المبيع','السعر المقترح','الإجراء'],rows)+'</section>';
+ return '<div class="pagehead"><h1>تسعير الأصناف</h1>'+button('policy',null,'primary')+manageButton('resetPolicy','','استعادة الإعدادات الافتراضية')+'</div><section class="panel"><div class="panelhead"><div><h2>أسعار البيع المعتمدة</h2><p class="note">'+(pol.kind==='margin'?'هامش ربح':'إضافة على التكلفة')+' '+digits(pol.rate)+'٪ · تقريب للأعلى إلى '+digits(pol.step)+' · '+(pol.loss==='warn'?'تحذير قبل البيع بخسارة':'منع البيع بخسارة')+'</p><p class="note">للمواد المصنّعة: متوسط التكلفة يحسب تلقائياً من كميات المكوّنات ومتوسط تكلفتها الحالي. تقييم الفواتير والمخزون المحاسبي التاريخي لا يتغيّر.</p></div></div>'+table(['الصنف','متوسط التكلفة','سعر المبيع','السعر المقترح','الإجراء'],rows)+'</section>';
 }
 function explainedSelect(id,label,choices,current,help){
  const tip=id+'Help';
@@ -666,7 +671,7 @@ $('modal').addEventListener('keydown',e=>{
  if(visible){e.preventDefault();e.stopPropagation();setTip(visible.parentElement,false)}
 });
 function componentFields(components={}){
- const raw=Object.entries(items).filter(([,item])=>item[2]==='raw');
+ const raw=Object.entries(items).filter(([id,item])=>!state.catalog[id].archived&&item[2]==='raw');
  const rows=raw.map(([id,[name,unit]])=>{
    const quantity=components[id],selected=quantity!==undefined;
    return '<div class="component-row"><label><input type="checkbox" data-component="'+id+'" '+(selected?'checked':'')+'> '+name+'</label>'+
@@ -681,7 +686,7 @@ function readComponents(catalog){
  const result={};
  for(const input of selected){
    const id=input.dataset.component,quantity=Number($('qty-'+id).value);
-   if(catalog[id]?.type!=='raw')throw Error('يجب اختيار المكوّنات من المواد الأولية.');
+   if(catalog[id]?.archived||catalog[id]?.type!=='raw')throw Error('يجب اختيار المكوّنات من المواد الأولية.');
    if(!Number.isFinite(quantity)||quantity<=0)throw Error('أدخل كمية أكبر من صفر لكل مادة مختارة.');
    result[id]=quantity;
  }
@@ -757,7 +762,8 @@ function saveSpecial(next){
    const name=$('itemName').value.trim(),unit=$('itemUnit').value.trim(),type=$('itemType').value;
    if(!name||name.length>80||!unit||unit.length>20||!Object.hasOwn(types,type))throw Error('أدخل اسم الصنف ونوعه ووحدته.');
    if(Object.values(next.catalog).some(item=>item.name===name))throw Error('يوجد صنف بهذا الاسم.');
-   const id='item-'+(Object.keys(next.catalog).length+1);
+   next.itemSerial=Math.max(next.itemSerial||0,...Object.keys(next.catalog).map(k=>Number(k.split('-')[1])||0))+1;
+   const id='item-'+next.itemSerial;
    const item={name,unit,type};
    if(type==='manufactured')item.components=readComponents(next.catalog);
    next.catalog[id]=item;
@@ -778,6 +784,7 @@ function saveSpecial(next){
  return Books.post(next,mode,$('category')?.value||'capital',1,{amount:getPrice('bill'),payment:$('pay')?.value});
 }
 function postedInvoice(e,from,book){
+ const items=displayItems({...state.catalog,...e.labels});
  returnLot=from;
  const labels=Books.accounts;
  let body='';
@@ -785,6 +792,8 @@ function postedInvoice(e,from,book){
  items[l.item][0],serial(l.lot),(l.dir<0?'− ':'+ ')+fmt(l.q)+' '+items[l.item][1],digits(l.unit_cost),digits(l.unit_price),amount(l.value),...(e.op==='sale'?[amount(Books.cents(l.unit_price*l.q))]:[])]));
  if(e.op==='expense')body+=line('بند المصروف',labels[e.id]);
  if(e.op==='opening')body+=line('الصنف',items[e.id][0])+line('الكمية الافتتاحية',fmt(e.openingQty))+line('تكلفة الوحدة',digits(e.openingCost));
+ if(e.corrects)body+=line('تصحيح المستند',serial(e.corrects));
+ if(e.replacement)body+=line('المستند البديل',serial(e.replacement));
  if(e.source)body+=line('المستند الأصلي',serial(e.source));
  if(['sale','receive','expense'].includes(e.op))body+=line('الدفع',cashText(e));
  if(e.op==='sale')body+=line('تكلفة المبيعات',amount(e.cogs))+line('مجمل الربح',amount(e.amount-e.cogs));
@@ -794,7 +803,7 @@ function postedInvoice(e,from,book){
  const reversed=book.events.find(d=>d.source===e.doc);
  if(reversed)body+=line('تم العكس بموجب',serial(reversed.doc));
  const canReverse=book===state&&!reversed&&e.op!=='reverse';
- paper('<div class="paperbar"><span>'+icon('log')+' مستند مرحّل</span>'+closePaper+'</div><article class="invoice"><div class="invoicehead"><div><div class="paperbrand">'+icon('dish')+' مقصف</div><h2 id="paperTitle">'+names[e.op]+'</h2></div><div class="docmeta">'+serial(e.doc)+'<small>'+dateTime(e.at)+'</small></div></div>'+body+'</article><div class="paperactions">'+(from?'<button class="secondary" data-lots="'+from+'">العودة إلى الدفعات</button>':'')+(canReverse?'<button class="secondary" data-reverse="'+e.doc+'">إنشاء سند عكسي</button>':'')+'<button class="primary" data-print>طباعة</button></div>');
+ paper('<div class="paperbar"><span>'+icon('log')+' مستند مرحّل</span>'+closePaper+'</div><article class="invoice"><div class="invoicehead"><div><div class="paperbrand">'+icon('dish')+' مقصف</div><h2 id="paperTitle">'+names[e.op]+'</h2></div><div class="docmeta">'+serial(e.doc)+'<small>'+dateTime(e.at)+'</small></div></div>'+body+'</article><div class="paperactions">'+(from?'<button class="secondary" data-lots="'+from+'">العودة إلى الدفعات</button>':'')+(canReverse?docActions(e):'')+'<button class="primary" data-print>طباعة</button></div>');
 }
 const reportTitles={profit:'الأرباح والخسائر',balance:'الميزانية العمومية',inventory:'تقييم المخزون',sales:'المبيعات',purchases:'المشتريات',expenses:'المصروفات',journal:'دفتر اليومية',trial:'ميزان المراجعة'};
 function reportView(book,r){
